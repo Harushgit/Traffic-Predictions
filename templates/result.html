@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<style>
+	body
+	{
+		background-image:url({{url_for('static',filename='images/crop.jpg')}});
+		height: 100%;
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+	}
+	<body bgcolor=”#800000">
+	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Forecast</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <form action="{{ url_for('predict')}}" method="post">
+            <center><h1 style="color: blue" class='container-heading'><span class="heading_font">Traffic Forecast</span></h1></center>
+        <!-- Result -->
+		<div class="results">
+			{% if prediction >= 20%}
+				<center><h1 style="color: red"class='container-heading' ><span class='danger'>Traffic<br></span></h1></center>
+				<center><img src='static\images\1.jfif' alt="Disease" width="500" height="400"></center>	
+				
+			
+			{% else %}
+				<center><h1 style="color: red" class='container-heading'><span class='safe'><br><br>No Traffic</span></h1></center>
+				<center><img src='static\images\2.jfif' alt="Disease" width="500" height="400"></center>
+				
+			{% endif %}
+			<br><br><br><br>  				
+			
+
+		  
+		</div>
+		
+        </form>
+		
+<body bgcolor="pink">
+    </div>
+
+<style>
+
+
+</body>
+
+</html>
